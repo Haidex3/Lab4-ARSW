@@ -10,3 +10,9 @@ LabCompleto/target/classes/edu/eci/.DS_Store
 .vscode/settings.json
 LabCompleto/target/classes/edu/eci/arsw/blueprints/model/Point.class
 LabCompleto/src/main/java/edu/eci/.DS_Store
+Introduccion/target/classes/edu/eci/arsw/springdemo/EnglishSpellChecker.class
+Introduccion/target/classes/edu/eci/arsw/springdemo/GrammarChecker.class
+Introduccion/target/classes/edu/eci/arsw/springdemo/SpanishSpellChecker.class
+Introduccion/target/classes/edu/eci/arsw/springdemo/SpellChecker.class
+Introduccion/target/classes/edu/eci/arsw/springdemo/ui/Main.class
+Introduccion/target/SPRING_DIP_DI_DEMO-1.0.jar
