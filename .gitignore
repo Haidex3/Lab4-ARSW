@@ -1,7 +1,0 @@
-target/classes/edu/eci/arsw/blacklistvalidator/HostBlackListsValidator.class
-target/classes/edu/eci/arsw/blacklistvalidator/Main.class
-target/classes/edu/eci/arsw/spamkeywordsdatasource/HostBlacklistsDataSourceFacade.class
-target/classes/edu/eci/arsw/spamkeywordsdatasource/Touple.class
-target/classes/edu/eci/arsw/threads/CountThread.class
-target/classes/edu/eci/arsw/threads/CountThreadsMain.class
-target/test-classes/edu/eci/arsw/math/PiCalcTest.class
