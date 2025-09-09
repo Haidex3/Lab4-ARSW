@@ -35,6 +35,13 @@ En la clase `GrammarChecker`, añadimos la anotación `@Component`, `@Autowired`
 </p>
 
 
+Salidas:
+<p>
+  <img src="Introduccion/img/output1.png" width="270"/><br>
+</p>
+<p>
+  <img src="Introduccion/img/output2.png" width="270"/><br>
+</p>
 
 
 ![](img/ClassDiagram1.png)
