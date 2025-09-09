@@ -2,6 +2,8 @@
 
 ## Arquitecturas de Software
 
+## Emily Noreña y Haider Rodriguez
+
 # Componentes y conectores - Parte I.
 
 El ejercicio se debe traer terminado para el siguiente laboratorio (Parte II).
@@ -14,6 +16,14 @@ El ejercicio se debe traer terminado para el siguiente laboratorio (Parte II).
 En este ejercicio se va a construír un modelo de clases para la capa lógica de una aplicación que permita gestionar planos arquitectónicos de una prestigiosa compañia de diseño. 
 
 **Solución: Ejercicio introductorio al manejo de Spring y la configuración basada en anotaciones**
+
+En las clases `SpanishSpellChecker` y `EnglishSpellChecker` incluimos la anotación `@Component("<nombre_del_bean>")`. Esta anotación nos permite marcar estas clases como un bean administrado por Spring. Una vez detectada, se registra en el contenedor de Spring para poder inyectarla. El valor dentro de la anotación corresponde a el nombre del bean, sirve para distinguir beans del mismo tipo.
+
+
+En la clase `GrammarChecker`, añadimos la anotación `@Component`, `@Autowired` y `@Qualifier("englishSpellChecker")`. 
+
+`@Autowired`: Le dice a Spring que debe inyectar automáticamente, en este caso SpellChecker. Aquí se puede presentar un conflicto de dependencias. Para esto, usamos `@Qualifier("<nombre_del_bean>")`. Esta anotación resuelve ese conflicto cuando hay múltiples implementaciones del mismo tipo.
+
 
 
 
