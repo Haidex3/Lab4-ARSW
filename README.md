@@ -37,10 +37,10 @@ En la clase `GrammarChecker`, añadimos la anotación `@Component`, `@Autowired`
 
 Salidas:
 <p>
-  <img src="Introduccion/img/output1.png" width="270"/><br>
+  <img src="Introduccion/img/output1.png" width="600"/><br>
 </p>
 <p>
-  <img src="Introduccion/img/output2.png" width="270"/><br>
+  <img src="Introduccion/img/output2.png" width="700"/><br>
 </p>
 
 
