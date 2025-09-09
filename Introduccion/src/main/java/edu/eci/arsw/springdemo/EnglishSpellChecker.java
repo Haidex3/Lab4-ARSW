@@ -2,7 +2,7 @@ package edu.eci.arsw.springdemo;
 
 import org.springframework.stereotype.Component;
 
-@Component("english")
+@Component("englishSpellChecker")
 public class EnglishSpellChecker implements SpellChecker {
 
 	@Override
@@ -12,3 +12,6 @@ public class EnglishSpellChecker implements SpellChecker {
 
         
 }
+
+
+
