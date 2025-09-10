@@ -10,6 +10,8 @@ import edu.eci.arsw.blueprints.model.Point;
 import edu.eci.arsw.blueprints.persistence.BlueprintNotFoundException;
 import edu.eci.arsw.blueprints.persistence.BlueprintPersistenceException;
 import edu.eci.arsw.blueprints.persistence.impl.InMemoryBlueprintPersistence;
+
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.junit.Test;
@@ -67,6 +69,42 @@ public class InMemoryPersistenceTest {
         }
                 
         
+    }
+
+    @Test
+    public void testSaveAndGetBlueprint() throws Exception {
+        InMemoryBlueprintPersistence ibpp = new InMemoryBlueprintPersistence();
+        Blueprint bp = new Blueprint("Emily", "TestBP", new Point[]{new Point(0,0), new Point(10,10)});
+        ibpp.saveBlueprint(bp);
+
+        Blueprint loaded = ibpp.getBlueprint("Emily", "TestBP");
+        assertNotNull(loaded);
+        assertEquals("Emily", loaded.getAuthor());
+        assertEquals("TestBP", loaded.getName());
+    }
+
+    @Test
+    public void testGetBlueprintsByAuthor() throws Exception {
+        InMemoryBlueprintPersistence ibpp = new InMemoryBlueprintPersistence();
+        Blueprint bp1 = new Blueprint("Emily", "BP1", new Point[]{new Point(1,1)});
+        Blueprint bp2 = new Blueprint("Emily", "BP2", new Point[]{new Point(2,2)});
+        ibpp.saveBlueprint(bp1);
+        ibpp.saveBlueprint(bp2);
+
+        Set<Blueprint> emilyBps = ibpp.getBlueprintsByAuthor("Emily");
+        assertEquals(2, emilyBps.size());
+    }
+
+    @Test
+    public void testGetAllBlueprints() throws Exception {
+        InMemoryBlueprintPersistence ibpp = new InMemoryBlueprintPersistence();
+        Blueprint bp1 = new Blueprint("Emily", "BP1", new Point[]{new Point(1,1)});
+        Blueprint bp2 = new Blueprint("Haider", "BP2", new Point[]{new Point(2,2)});
+        ibpp.saveBlueprint(bp1);
+        ibpp.saveBlueprint(bp2);
+
+        Set<Blueprint> all = ibpp.getAllBlueprints();
+        assertTrue(all.size() >= 2); // >= porque ya hay uno de prueba cargado en el constructor
     }
 
 
