@@ -44,6 +44,8 @@ Salidas:
 </p>
 
 
+# Blueprints - Parte II.
+
 ![](img/ClassDiagram1.png)
 
 1. Configure la aplicación para que funcione bajo un esquema de inyección de dependencias, tal como se muestra en el diagrama anterior.
@@ -52,11 +54,48 @@ Salidas:
 	Lo anterior requiere:
 
 	* Agregar las dependencias de Spring.
+
+	**Rta:** Agregamos las dependencias necesarias al pom
+   
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-core</artifactId>
+				<version>4.2.4.RELEASE</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context</artifactId>
+				<version>4.2.4.RELEASE</version>
+			</dependency>
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>4.12</version>
+			</dependency>
+		</dependencies>
+
 	* Agregar la configuración de Spring.
+
 	* Configurar la aplicación -mediante anotaciones- para que el esquema de persistencia sea inyectado al momento de ser creado el bean 'BlueprintServices'.
 
+	**Rta:** Configuración de la aplicación: Acá se define la clase de configuración para cargar los beans.
+
+   IMG
 
 2. Complete los operaciones getBluePrint() y getBlueprintsByAuthor(). Implemente todo lo requerido de las capas inferiores (por ahora, el esquema de persistencia disponible 'InMemoryBlueprintPersistence') agregando las pruebas correspondientes en 'InMemoryPersistenceTest'.
+
+**Rta:** 
+
+imgs
+
+Pruebas que se implementaron:
+
+- `saveNewAndLoadTest`: Verifica que un blueprint guardado pueda recuperarse correctamente y sea el mismo objeto.
+- `saveExistingBpTest`: Comprueba que no se puedan guardar dos blueprints con el mismo autor y nombre (lanza excepción).
+- `testSaveAndGetBlueprint`: Asegura que al guardar un blueprint, luego se pueda recuperar con sus datos intactos.
+- `testGetBlueprintsByAuthor`: Valida que se recuperen todos los blueprints de un autor específico.
+- `testGetAllBlueprints`: Garantiza que se puedan obtener todos los blueprints almacenados en memoria.
 
 3. Haga un programa en el que cree (mediante Spring) una instancia de BlueprintServices, y rectifique la funcionalidad del mismo: registrar planos, consultar planos, registrar planos específicos, etc.
 
