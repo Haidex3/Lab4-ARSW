@@ -81,7 +81,9 @@ Salidas:
 
 	**Rta:** Configuración de la aplicación: Acá se define la clase de configuración para cargar los beans.
 
-   IMG
+	<p>
+  		<img src="img/appconfig.png" width="700"/><br>
+	</p>
 
 2. Complete los operaciones getBluePrint() y getBlueprintsByAuthor(). Implemente todo lo requerido de las capas inferiores (por ahora, el esquema de persistencia disponible 'InMemoryBlueprintPersistence') agregando las pruebas correspondientes en 'InMemoryPersistenceTest'.
 
