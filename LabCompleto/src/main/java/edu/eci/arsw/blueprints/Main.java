@@ -7,10 +7,11 @@ import edu.eci.arsw.blueprints.config.AppConfig;
 import edu.eci.arsw.blueprints.model.Blueprint;
 import edu.eci.arsw.blueprints.model.Point;
 import edu.eci.arsw.blueprints.services.BlueprintsServices;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Main {
     public static void main(String[] args) {
-        ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
+        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
 
         BlueprintsServices services = ctx.getBean(BlueprintsServices.class);
 
@@ -30,6 +31,9 @@ public class Main {
 
         } catch (Exception e) {
             e.printStackTrace();
+        } finally{
+            ctx.close();
         }
     }
 }
+
