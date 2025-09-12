@@ -119,4 +119,20 @@ Pruebas que se implementaron:
 	* (A) Filtrado de redundancias: suprime del plano los puntos consecutivos que sean repetidos.
 	* (B) Filtrado de submuestreo: suprime 1 de cada 2 puntos del plano, de manera intercalada.
 
+Para resolver el problema se implementaron los siuientes cambios:
+
+1. **Interfaz `BlueprintFilter`**  
+   - **Qué es:** Contrato para aplicar filtros sobre un `Blueprint`.  
+   - **Por qué:** Permite cambiar o agregar estrategias de filtrado sin modificar el resto de la aplicación (principio de abierto/cerrado).
+
+2. **Filtros concretos**  
+   - `RedundancyFilter`: elimina puntos consecutivos repetidos.  
+     - **Por qué:** Reduce datos redundantes y optimiza el tamaño de los planos.  
+   - `SubsamplingFilter`: conserva solo 1 de cada 2 puntos.  
+     - **Por qué:** Realiza submuestreo para simplificar planos grandes.
+
+3. **Modificación en `BlueprintsServices`**  
+   - **Qué es:** Ahora inyecta un filtro usando `@Autowired` y `@Qualifier`, y aplica el filtrado en todas las consultas.  
+   - **Por qué:** Centraliza el filtrado en un solo lugar, evitando duplicar lógica y haciendo posible cambiar la estrategia solo ajustando la configuración.
+
 5. Agrege las pruebas correspondientes a cada uno de estos filtros, y pruebe su funcionamiento en el programa de prueba, comprobando que sólo cambiando la posición de las anotaciones -sin cambiar nada más-, el programa retorne los planos filtrados de la manera (A) o de la manera (B). 
